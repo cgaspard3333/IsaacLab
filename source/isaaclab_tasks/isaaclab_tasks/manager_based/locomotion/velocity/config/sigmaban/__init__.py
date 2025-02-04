@@ -13,7 +13,7 @@ from . import agents
 
 gym.register(
     id="Isaac-Velocity-Rough-Sigmaban-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": f"{__name__}.rough_env_cfg:SigmabanRoughEnvCfg",
@@ -25,7 +25,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Velocity-Rough-Sigmaban-Play-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": f"{__name__}.rough_env_cfg:SigmabanRoughEnvCfg_PLAY",
@@ -37,7 +37,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Velocity-Flat-Sigmaban-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": f"{__name__}.flat_env_cfg:SigmabanFlatEnvCfg",
@@ -49,7 +49,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Velocity-Flat-Sigmaban-Play-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": f"{__name__}.flat_env_cfg:SigmabanFlatEnvCfg_PLAY",

@@ -92,7 +92,7 @@ SIGMABAN_CFG = ArticulationCfg(
 
 CARTPOLE_RHOBAN_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path=f"source/extensions/omni.isaac.lab_assets/data/Robots/Rhoban/cartpole_rhoban.usd",
+        usd_path=f"source/isaaclab_assets/data/Isaac/IsaacLab/Robots/Rhoban/cartpole.usd",
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             rigid_body_enabled=True,
             max_linear_velocity=1000.0,

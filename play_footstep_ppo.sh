@@ -13,10 +13,10 @@ EXP_ID=`python next_run_id.py $ALGO $ENV`
 
 # killall -9 python
 
-./isaaclab.sh -p source/standalone/workflows/rsl_rl/play.py \
+./isaaclab.sh -p scripts/reinforcement_learning/rsl_rl/play.py \
     --task $ENV-v0 \
     --experiment_name $ALGO \
-    --run_name $1 \
+    --load_run $1 \
     # --num_env 1 \
     # --headless --video --video_length 2000 \
 

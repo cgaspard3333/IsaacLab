@@ -5,11 +5,11 @@
 
 from dataclasses import MISSING
 
-import omni.isaac.lab.sim as sim_utils
-from omni.isaac.lab.managers import CommandTermCfg
-from omni.isaac.lab.markers import VisualizationMarkersCfg
-from omni.isaac.lab.utils import configclass
-from omni.isaac.lab.markers.config import BLUE_ARROW_X_MARKER_CFG, FRAME_MARKER_CFG, GREEN_ARROW_X_MARKER_CFG
+import isaaclab.sim as sim_utils
+from isaaclab.managers import CommandTermCfg
+from isaaclab.markers import VisualizationMarkersCfg
+from isaaclab.utils import configclass
+from isaaclab.markers.config import BLUE_ARROW_X_MARKER_CFG, FRAME_MARKER_CFG, GREEN_ARROW_X_MARKER_CFG
 
 
 from .footstep_pose_command import FootstepPoseCommand
