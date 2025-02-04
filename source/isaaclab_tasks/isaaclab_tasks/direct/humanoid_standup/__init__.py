@@ -19,7 +19,7 @@ from . import agents
 
 gym.register(
     id="Isaac-SigmabanStandUp-Direct-v0",
-    entry_point="omni.isaac.lab_tasks.direct.humanoid_standup:StandUpEnv",
+    entry_point="isaaclab_tasks.direct.humanoid_standup:StandUpEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": SigmabanEnvCfg,

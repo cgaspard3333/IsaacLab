@@ -6,14 +6,14 @@ The following configurations are available:
 
 """
 
-import omni.isaac.lab.sim as sim_utils
-from omni.isaac.lab.actuators import ActuatorNetMLPCfg, DCMotorCfg, ImplicitActuatorCfg, IdealPDActuatorCfg
-from omni.isaac.lab.assets.articulation import ArticulationCfg
+import isaaclab.sim as sim_utils
+from isaaclab.actuators import ActuatorNetMLPCfg, DCMotorCfg, ImplicitActuatorCfg, IdealPDActuatorCfg
+from isaaclab.assets.articulation import ArticulationCfg
 
 
 SIGMABAN_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path=f"source/extensions/omni.isaac.lab_assets/data/Robots/Rhoban/sigmaban_mjcf.usda",
+        usd_path=f"source/isaaclab_assets/data/Isaac/IsaacLab/Robots/Rhoban/sigmaban_mjcf.usda",
         activate_contact_sensors=True,
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,

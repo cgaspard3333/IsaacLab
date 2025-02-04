@@ -7,25 +7,25 @@ from __future__ import annotations
 
 import torch
 
-import omni.isaac.core.utils.torch as torch_utils
-from omni.isaac.core.utils.torch.rotations import compute_heading_and_up, compute_rot, quat_conjugate
+import isaacsim.core.utils.torch as torch_utils
+from isaacsim.core.utils.torch.rotations import compute_heading_and_up, compute_rot, quat_conjugate
 from gymnasium import spaces
 
-import omni.isaac.lab.sim as sim_utils
-from omni.isaac.lab.assets import Articulation, ArticulationCfg, RigidObjectCfg
-from omni.isaac.lab.managers import SceneEntityCfg
-from omni.isaac.lab.managers import EventTermCfg as EventTerm
-from omni.isaac.lab.envs import DirectRLEnv, DirectRLEnvCfg
+import isaaclab.sim as sim_utils
+from isaaclab.assets import Articulation, ArticulationCfg, RigidObjectCfg
+from isaaclab.managers import SceneEntityCfg
+from isaaclab.managers import EventTermCfg as EventTerm
+from isaaclab.envs import DirectRLEnv, DirectRLEnvCfg
 import numpy as np
-from omni.isaac.lab.utils import configclass
-import omni.isaac.lab.utils.math as math_utils
-import omni.isaac.lab.envs.mdp as mdp
+from isaaclab.utils import configclass
+import isaaclab.utils.math as math_utils
+import isaaclab.envs.mdp as mdp
 
-from omni.isaac.lab.sensors import ContactSensor, ContactSensorCfg
-from omni.isaac.lab.scene import InteractiveSceneCfg
-from omni.isaac.lab.sim import SimulationCfg, PhysxCfg, RenderCfg
-from omni.isaac.lab.terrains import TerrainImporterCfg
-from omni.isaac.lab_assets import SIGMABAN_CFG
+from isaaclab.sensors import ContactSensor, ContactSensorCfg
+from isaaclab.scene import InteractiveSceneCfg
+from isaaclab.sim import SimulationCfg, PhysxCfg, RenderCfg
+from isaaclab.terrains import TerrainImporterCfg
+from isaaclab_assets import SIGMABAN_CFG
 
 
 @configclass
