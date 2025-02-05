@@ -92,7 +92,7 @@ SIGMABAN_CFG = ArticulationCfg(
 
 CARTPOLE_RHOBAN_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path=f"source/isaaclab_assets/data/Isaac/IsaacLab/Robots/Rhoban/cartpole.usd",
+        usd_path=f"source/isaaclab_assets/data/Isaac/IsaacLab/Robots/Rhoban/cartpole_rhoban_custom.usda",
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             rigid_body_enabled=True,
             max_linear_velocity=1000.0,
@@ -109,10 +109,12 @@ CARTPOLE_RHOBAN_CFG = ArticulationCfg(
         ),
     ),
     init_state=ArticulationCfg.InitialStateCfg(
-        pos=(0.0, 0.0, 0.0), joint_pos={"cart_to_pole": 1.5708} #90deg
+        pos=(0.0, 0.0, 0.15), 
+        joint_pos={"cart_to_pole": 1.5708}, #90deg
+        joint_vel={"cart_to_pole": 0.0}, 
     ),
     actuators={
-        "pole_actuator": ImplicitActuatorCfg(
+        "pole_actuator": IdealPDActuatorCfg(
             joint_names_expr=["cart_to_pole"], 
             effort_limit=6, #8Nm
             # velocity_limit=6.2831, #2*pi rad/s
