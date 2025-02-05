@@ -49,7 +49,7 @@ from isaaclab_assets import CARTPOLE_RHOBAN_CFG  # isort:skip
 def design_scene() -> tuple[dict, list]:
     """Designs the scene."""
     # Ground-plane
-    cfg = sim_utils.GroundPlaneCfg()
+    cfg = sim_utils.GroundPlaneCfg(usd_path="source/isaaclab_assets/data/Isaac/IsaacLab/Robots/Rhoban/default_environment.usd")
     cfg.func("/World/defaultGroundPlane", cfg)
     # Lights
     cfg = sim_utils.DomeLightCfg(intensity=3000.0, color=(0.75, 0.75, 0.75))
@@ -82,10 +82,21 @@ def run_simulator(sim: sim_utils.SimulationContext, entities: dict[str, Articula
     default_joint_pos = robot.data.default_joint_pos
     default_joint_vel = robot.data.default_joint_vel
     robot.write_joint_state_to_sim(default_joint_pos, default_joint_vel, None, None)
-    mass_body_num = robot.find_bodies("mass")
-    mass_mass_body = robot.root_physx_view.get_masses()[0][mass_body_num[0]]
-    print(f"[INFO]: Mass at the end of the pendulum: {mass_mass_body[0]} kg")
+    
+    masses = robot.root_physx_view.get_masses()
 
+    pole_body_mass = 1.0
+    mass_body_mass = 2.0
+
+    mass_body_num = robot.find_bodies("mass")
+    pole_body_num = robot.find_bodies("pole")
+
+    masses[0][mass_body_num[0]] = mass_body_mass
+    masses[0][pole_body_num[0]] = pole_body_mass
+
+    robot.root_physx_view.set_masses(masses, torch.zeros(1))
+
+    # Besoin de recalculer les matrices d'inertie ??
     
     count = 0
 
@@ -99,9 +110,13 @@ def run_simulator(sim: sim_utils.SimulationContext, entities: dict[str, Articula
             robot.reset()
             robot.write_joint_state_to_sim(default_joint_pos, default_joint_vel, None, None)
             print("[INFO]: Resetting robot state...")
-            mass_body_num = robot.find_bodies("mass")
-            mass_mass_body = robot.root_physx_view.get_masses()[0][mass_body_num[0]]
-            print(f"[INFO]: Mass: {mass_mass_body}")
+            masses = robot.root_physx_view.get_masses()
+            print(f"[INFO]: Masses tensor : {masses}")
+            mass_body_mass = masses[0][mass_body_num[0]].item()
+            mass_body_pole = masses[0][pole_body_num[0]].item()
+
+            print(f"[INFO]: Mass at the end of the pendulum: {mass_body_mass} kg")
+            print(f"[INFO]: Mass of the pendulum: {mass_body_pole} kg")
 
         if count % 100 == 0:
             angle = robot.data.joint_pos[0].item()

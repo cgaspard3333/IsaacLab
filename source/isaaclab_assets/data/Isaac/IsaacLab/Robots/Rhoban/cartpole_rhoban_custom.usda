@@ -7,8 +7,8 @@
                 double radius = 5
             }
             dictionary Perspective = {
-                double3 position = (0.22749904676024077, 0.1671975132574127, 0.26624739017881244)
-                double3 target = (-0.1440581448093289, -0.044121224850119156, 0.0672226068201627)
+                double3 position = (0.10812445706175705, 0.3298461972165476, 0.1691264748171048)
+                double3 target = (-0.09999506028750635, -0.1830753789186661, 0.03179877803825076)
             }
             dictionary Right = {
                 double3 position = (0, -5, 0)
@@ -83,13 +83,14 @@ def Xform "cartpole" (
     )
     {
         vector3f physics:angularVelocity = (0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0)
         bool physics:kinematicEnabled = 0
-        float physics:mass = 0.01
+        float physics:mass = 1
         bool physics:rigidBodyEnabled = 1
         vector3f physics:velocity = (1.123038e-8, -2.130603e-11, 0)
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0, 0, 0)
+        double3 xformOp:translate = (0.013, 0, -0.05)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Cube "Cube" (
@@ -102,8 +103,8 @@ def Xform "cartpole" (
             )
             double size = 1
             quatd xformOp:orient = (1, 0, 0, 0)
-            double3 xformOp:scale = (0.005, 0.005, 0.1)
-            double3 xformOp:translate = (0.013, 0, -0.046)
+            double3 xformOp:scale = (0.005, 0.005, 0.11)
+            double3 xformOp:translate = (0, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
@@ -115,7 +116,7 @@ def Xform "cartpole" (
             float physics:breakForce = inf
             float physics:breakTorque = inf
             point3f physics:localPos0 = (0.013, 0, 5.9604646e-9)
-            point3f physics:localPos1 = (0.013, 0, 5.9604646e-9)
+            point3f physics:localPos1 = (0, 0, 0.05)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
         }
@@ -131,7 +132,7 @@ def Xform "cartpole" (
         bool physics:rigidBodyEnabled = 1
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0.013, 0, -0.09)
+        double3 xformOp:translate = (0.013, 0, -0.1)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Cylinder "Cylinder" (
@@ -159,8 +160,8 @@ def Xform "cartpole" (
             rel physics:body1 = </cartpole/mass>
             float physics:breakForce = inf
             float physics:breakTorque = inf
-            point3f physics:localPos0 = (0.013, 5.9604646e-9, -0.09)
-            point3f physics:localPos1 = (0, 5.9604646e-9, -5.066395e-9)
+            point3f physics:localPos0 = (0, 5.9604646e-9, -0.05)
+            point3f physics:localPos1 = (0, 5.9604646e-9, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
         }
