@@ -7,8 +7,8 @@
                 double radius = 5
             }
             dictionary Perspective = {
-                double3 position = (0.10812445706175705, 0.3298461972165476, 0.1691264748171048)
-                double3 target = (-0.09999506028750635, -0.1830753789186661, 0.03179877803825076)
+                double3 position = (0.06160466371352792, 0.10393963760295422, 0.11130312538771717)
+                double3 target = (-0.06914421327688884, -0.18031728314633533, 0.0010916623139257259)
             }
             dictionary Right = {
                 double3 position = (0, -5, 0)
@@ -140,8 +140,8 @@ def Xform "cartpole" (
         )
         {
             uniform token axis = "X"
-            float3[] extent = [(-0.05, -0.5, -0.5), (0.05, 0.5, 0.5)]
-            double height = 0.1
+            float3[] extent = [(-0.5, -0.5, -0.5), (0.5, 0.5, 0.5)]
+            double height = 1
             rel material:binding = </cartpole/Looks/mass_material> (
                 bindMaterialAs = "weakerThanDescendants"
             )
@@ -149,7 +149,7 @@ def Xform "cartpole" (
             custom bool refinementEnableOverride = 1
             custom int refinementLevel = 2
             quatd xformOp:orient = (1, 0, 0, 0)
-            double3 xformOp:scale = (0.1, 0.029999999329447746, 0.029999999329447746)
+            double3 xformOp:scale = (0.005, 0.02, 0.02)
             double3 xformOp:translate = (0, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
