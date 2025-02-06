@@ -1,5 +1,5 @@
 asset_path: /home/rhoban/Documents/frasa/frasa_env/mujoco_simulator/model/robot.xml
-usd_dir: /home/rhoban/Tuto_Isaac_Gym/IsaacLab/source/extensions/omni.isaac.lab_assets/data/Robots/Rhoban
+usd_dir: /home/rhoban/Tuto_Isaac_Gym/IsaacLab/source/isaaclab_assets/data/Isaac/IsaacLab/Robots/Rhoban/
 usd_file_name: sigmaban_mjcf.usd
 force_usd_conversion: true
 make_instanceable: false

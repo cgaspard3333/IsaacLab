@@ -22,7 +22,6 @@ class InHandReOrientationCommandCfg(CommandTermCfg):
     """
 
     class_type: type = InHandReOrientationCommand
-    resampling_time_range: tuple[float, float] = (1e6, 1e6)  # no resampling based on time
 
     asset_name: str = MISSING
     """Name of the asset in the environment for which the commands are generated."""
